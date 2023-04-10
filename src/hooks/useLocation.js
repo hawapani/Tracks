@@ -26,7 +26,6 @@ export default (shouldTrack, callback) => {
         }
     };
     
-
       if (shouldTrack) {
         startWatching();
       } else {
