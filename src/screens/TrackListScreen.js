@@ -7,6 +7,8 @@ import { Context as LocationContext } from '../context/LocationContext';
 const TrackListScreen = ({navigation}) => {
   const { state,fetchTracks } = useContext(LocationContext);
 
+    consolesldkjfs
+    
   return <>
     <NavigationEvents onWillFocus={fetchTracks} />
     <Text style={{ fontSize: 48 }}>TrackListScreen</Text>
