@@ -17,7 +17,7 @@ const Map = () => {
                 latitudeDelta: 0.01,
                 longitudeDelta: 0.01
             }}
-            
+        
         >
             <Circle 
                 center={currentLocation.coords}
