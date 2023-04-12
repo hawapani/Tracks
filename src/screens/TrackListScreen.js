@@ -7,27 +7,28 @@ import { Context as TrackContext } from '../context/TrackContext';
 const TrackListScreen = ({navigation}) => {
   const { state,fetchTracks } = useContext(TrackContext);
 
-    console.log(fetchTracks);
-
   return <>
-    <NavigationEvents onWillFocus={fetchTracks} />
+    <NavigationEvents onWillFocus={() => fetchTracks()} />
     <Text style={{ fontSize: 48 }}>TrackListScreen</Text>
-    <FlatList 
-      data={state}
-      keyExtractor={(item) => item._id}
-      renderItem={({item}) => {
-        <TouchableOpacity>
-          <ListItem>
-            <ListItem.Content>
-              <ListItem.Title>
-                {item.name}
-              </ListItem.Title>
-            </ListItem.Content>
-            <ListItem.Chevron />
-          </ListItem>
-        </TouchableOpacity>
-      }}
-    />
+    <FlatList
+        data={state}
+        keyExtractor={(item) => item._id}
+        renderItem={({ item }) => {
+          return (
+            <TouchableOpacity>
+              <ListItem bottomDivider>
+                <ListItem.Content>
+                  <ListItem.Title>
+                    {item.name}
+                    
+                  </ListItem.Title>
+                </ListItem.Content>
+                <ListItem.Chevron />
+              </ListItem>
+            </TouchableOpacity>
+          );
+        }}
+      />
   </>
 };
 
